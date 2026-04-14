@@ -5,319 +5,288 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sport Orthèse – Simulation Mega Menu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 <style>
-/* =============================================
-   RESET
-============================================= */
+/* === RESET === */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{font-family:'Inter',Arial,Helvetica,sans-serif;color:#2c2c2c;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Roboto',system-ui,Arial,Helvetica,sans-serif;color:#091E42;background:#fff;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
-ul,ol{list-style:none}
+ul{list-style:none}
 button{font-family:inherit;cursor:pointer}
 img{display:block;max-width:100%}
 
-/* =============================================
-   DESIGN TOKENS
-============================================= */
+/* === DESIGN TOKENS (sport-orthese.com) === */
 :root{
-  --c-primary:#00A651;
-  --c-primary-dark:#008a43;
-  --c-primary-light:#e8f5ee;
-  --c-red:#d32f2f;
-  --c-text:#2c2c2c;
-  --c-text-light:#666;
-  --c-text-muted:#999;
-  --c-border:#e5e5e5;
-  --c-bg:#f7f7f7;
-  --c-white:#fff;
-  --font-xs:11px;
-  --font-sm:12px;
-  --font-base:13px;
-  --font-md:14px;
-  --font-lg:16px;
-  --radius-sm:4px;
-  --radius-md:8px;
-  --radius-lg:24px;
-  --shadow-menu:0 6px 24px rgba(0,0,0,.12);
-  --transition:.2s ease;
-  --header-h:60px;
-  --topbar-h:34px;
-  --nav-h:44px;
+  --navy:#091E42;
+  --navy-light:#344563;
+  --navy-muted:#5E6C84;
+  --navy-pale:#6B778C;
+  --blue:#05AFF2;
+  --blue-dark:#0059A7;
+  --blue-deep:#08356F;
+  --blue-btn:#1455A0;
+  --topbar-bg:#C9EDFB;
+  --topbar-text:#05AFF2;
+  --orange:#FF7040;
+  --green:#07FAB9;
+  --border:#EBECF0;
+  --bg-light:#F4F5F7;
+  --bg-lighter:#FAFBFC;
+  --white:#fff;
+  --shadow-menu:0 8px 24px rgba(9,30,66,.14);
+  --radius:4px;
+  --t:.2s ease;
 }
 
-/* =============================================
-   TOP BAR
-============================================= */
+/* === TOP BAR === */
 .topbar{
-  background:#2c2c2c;color:#fff;height:var(--topbar-h);
+  background:var(--topbar-bg);height:32px;
   display:flex;align-items:center;justify-content:center;
-  font-size:var(--font-xs);font-weight:500;gap:6px;letter-spacing:.2px;
+  font-size:12px;font-weight:500;color:var(--topbar-text);
+  font-style:italic;letter-spacing:.2px;
 }
-.topbar .icon{font-size:15px;vertical-align:middle}
-.topbar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
 
-/* =============================================
-   HEADER
-============================================= */
+/* === HEADER === */
 .header{
-  background:var(--c-white);height:var(--header-h);
-  display:flex;align-items:center;padding:0 20px;gap:20px;
-  border-bottom:1px solid var(--c-border);
+  background:var(--white);height:56px;
+  display:flex;align-items:center;padding:0 20px;gap:16px;
+  border-bottom:1px solid var(--border);
 }
-.logo{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.logo img{height:36px}
-.logo-fallback{
-  display:flex;align-items:center;gap:8px;
-}
-.logo-mark{
-  width:36px;height:36px;background:var(--c-primary);border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-weight:800;font-size:15px;line-height:1;
-}
-.logo-wordmark{font-size:17px;font-weight:700;color:var(--c-text)}
-.logo-wordmark b{color:var(--c-primary)}
+.logo{flex-shrink:0}
+.logo img{height:24px}
 
-.searchbox{
-  flex:1;max-width:560px;position:relative;
-}
+.searchbox{flex:1;max-width:560px;position:relative}
 .searchbox input{
-  width:100%;height:40px;border:1.5px solid var(--c-border);border-radius:var(--radius-lg);
-  padding:0 44px 0 16px;font-size:var(--font-md);font-family:inherit;
-  background:var(--c-bg);outline:none;transition:border-color var(--transition),background var(--transition);
+  width:100%;height:40px;border:1px solid var(--border);border-radius:var(--radius);
+  padding:0 40px 0 36px;font-size:14px;font-family:inherit;
+  background:var(--bg-lighter);outline:none;color:var(--navy);
+  transition:border-color var(--t);
 }
-.searchbox input:focus{border-color:var(--c-primary);background:var(--c-white)}
-.searchbox input::placeholder{color:var(--c-text-muted)}
-.searchbox-btn{
-  position:absolute;right:3px;top:50%;transform:translateY(-50%);
-  width:34px;height:34px;border:none;background:var(--c-primary);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;color:#fff;
-  transition:background var(--transition);
+.searchbox input:focus{border-color:var(--blue)}
+.searchbox input::placeholder{color:var(--navy-pale)}
+.searchbox .s-icon{
+  position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  color:var(--navy-pale);font-size:20px;pointer-events:none;
 }
-.searchbox-btn:hover{background:var(--c-primary-dark)}
-.searchbox-btn .icon{font-size:20px}
 
-.header-utils{display:flex;align-items:center;gap:2px;flex-shrink:0}
-.header-util{
-  display:flex;flex-direction:column;align-items:center;gap:1px;
-  padding:6px 10px;border-radius:var(--radius-md);transition:background var(--transition);
-  position:relative;
+.header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+.btn-contact{
+  display:flex;align-items:center;gap:6px;
+  background:var(--blue);color:var(--white);
+  padding:8px 16px;border-radius:var(--radius);font-size:13px;font-weight:500;
+  border:none;transition:background var(--t);white-space:nowrap;
 }
-.header-util:hover{background:var(--c-bg)}
-.header-util .icon{font-size:21px;color:var(--c-text-light)}
-.header-util span{font-size:10px;color:var(--c-text-light);font-weight:500}
-.badge{
-  position:absolute;top:1px;right:4px;width:16px;height:16px;border-radius:50%;
-  background:var(--c-primary);color:#fff;font-size:9px;font-weight:700;
+.btn-contact:hover{background:var(--blue-dark)}
+.btn-contact .icon{font-size:18px}
+.btn-contact small{font-size:10px;opacity:.8;display:block;font-weight:400}
+
+.btn-pro{
+  display:flex;align-items:center;gap:6px;
+  background:var(--white);color:var(--navy);
+  padding:8px 14px;border-radius:var(--radius);font-size:13px;font-weight:500;
+  border:1px solid var(--border);transition:border-color var(--t);white-space:nowrap;
+}
+.btn-pro:hover{border-color:var(--navy-muted)}
+.btn-pro .icon{font-size:18px;color:var(--blue)}
+
+.h-icon{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:var(--radius);color:var(--navy);
+  transition:background var(--t);position:relative;
+}
+.h-icon:hover{background:var(--bg-light)}
+.h-icon .icon{font-size:22px}
+.h-badge{
+  position:absolute;top:2px;right:2px;width:16px;height:16px;border-radius:50%;
+  background:var(--orange);color:var(--white);font-size:9px;font-weight:700;
   display:flex;align-items:center;justify-content:center;
 }
 
-.burger{display:none;background:none;border:none;padding:6px;color:var(--c-text)}
+.burger{display:none;background:none;border:none;padding:4px;color:var(--navy)}
 
-/* =============================================
-   NAVBAR
-============================================= */
+/* === NAVBAR === */
 .navbar{
-  background:var(--c-white);border-bottom:1px solid var(--c-border);
+  background:var(--white);border-bottom:1px solid var(--border);
   position:sticky;top:0;z-index:1000;
 }
-.nav-list{
-  display:flex;align-items:stretch;height:var(--nav-h);
-  padding:0 20px;gap:0;
-}
+.nav-list{display:flex;align-items:stretch;height:40px;padding:0 20px}
 .nav-link{
-  display:flex;align-items:center;gap:3px;padding:0 15px;
-  font-size:var(--font-base);font-weight:600;color:var(--c-text-light);
-  text-transform:uppercase;letter-spacing:.3px;cursor:pointer;
-  border-bottom:2px solid transparent;transition:color var(--transition);
-  background:none;border-top:none;border-left:none;border-right:none;
+  display:flex;align-items:center;gap:2px;padding:0 14px;
+  font-size:14px;font-weight:400;color:var(--navy);
+  background:none;border:none;border-bottom:2px solid transparent;
+  transition:color var(--t);
 }
-.nav-link .icon{font-size:15px;transition:transform var(--transition)}
-.nav-link:hover,.nav-link.is-active{color:var(--c-primary);border-bottom-color:var(--c-primary)}
-.nav-link.is-active .icon{transform:rotate(180deg)}
+.nav-link .icon{font-size:14px;transition:transform var(--t);color:var(--navy-pale)}
+.nav-link:hover,.nav-link.is-active{color:var(--blue);border-bottom-color:var(--blue)}
+.nav-link.is-active .icon{transform:rotate(180deg);color:var(--blue)}
 
-/* =============================================
-   MEGA MENU PANELS  –  outside navbar stacking
-============================================= */
+.nav-burger{
+  display:flex;align-items:center;gap:4px;padding:0 14px 0 0;
+  font-size:14px;font-weight:500;color:var(--navy);
+  background:var(--navy);color:var(--white);border:none;
+  border-radius:0;margin-right:4px;padding:0 12px;
+}
+.nav-burger .icon{font-size:18px}
+
+/* === MEGA PANELS === */
 .mega-backdrop{
   display:none;position:fixed;inset:0;z-index:998;
-  background:rgba(0,0,0,.32);
+  background:rgba(9,30,66,.25);
 }
 .mega-backdrop.is-visible{display:block}
 
 .mega-panel{
   display:none;position:fixed;left:0;right:0;z-index:999;
-  background:var(--c-white);box-shadow:var(--shadow-menu);
-  /* top is set via JS to sit below navbar */
+  background:var(--white);box-shadow:var(--shadow-menu);
+  border-top:1px solid var(--border);
 }
-.mega-panel.is-open{display:block;animation:megaIn .22s ease}
-@keyframes megaIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.mega-panel.is-open{display:block;animation:megaIn .2s ease}
+@keyframes megaIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
 
-/* ---------- Layout ---------- */
-.mega-body{display:flex;max-width:1360px;margin:0 auto;min-height:380px}
+.mega-body{display:flex;max-width:1400px;margin:0 auto;min-height:360px}
 
-/* -- Sidebar (zone A) -- */
+/* -- Sidebar -- */
 .mega-side{
-  width:230px;flex-shrink:0;background:var(--c-bg);
-  border-right:1px solid var(--c-border);padding:12px 0;
+  width:220px;flex-shrink:0;background:var(--bg-lighter);
+  border-right:1px solid var(--border);padding:10px 0;
   display:flex;flex-direction:column;
 }
 .mega-side-links{flex:1;overflow-y:auto}
 .mega-side-link{
-  display:flex;align-items:center;gap:8px;
-  padding:9px 16px;font-size:var(--font-base);font-weight:500;
-  color:var(--c-text-light);transition:all var(--transition);cursor:pointer;
-  border-left:3px solid transparent;background:none;border-top:none;border-right:none;border-bottom:none;
-  width:100%;text-align:left;
+  display:flex;align-items:center;gap:8px;width:100%;text-align:left;
+  padding:9px 14px;font-size:13px;font-weight:400;
+  color:var(--navy-light);background:none;
+  border:none;border-left:3px solid transparent;
+  transition:all var(--t);cursor:pointer;
 }
-.mega-side-link .icon{font-size:18px}
-.mega-side-link:hover{background:var(--c-primary-light);color:var(--c-primary)}
+.mega-side-link .icon{font-size:18px;color:var(--navy-pale)}
+.mega-side-link:hover{background:rgba(5,175,242,.06);color:var(--blue-dark)}
 .mega-side-link.is-active{
-  background:var(--c-primary-light);color:var(--c-primary);
-  border-left-color:var(--c-primary);font-weight:600;
+  background:rgba(5,175,242,.08);color:var(--blue-dark);
+  border-left-color:var(--blue);font-weight:500;
 }
-.mega-side-link.is-active .icon{color:var(--c-primary)}
+.mega-side-link.is-active .icon{color:var(--blue)}
 
-/* Promo block */
 .mega-side-promo{
-  margin:8px 12px;padding:14px;border-radius:var(--radius-md);
-  background:linear-gradient(135deg,var(--c-primary),var(--c-primary-dark));color:#fff;
+  margin:8px 10px;padding:12px;border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--blue-deep),var(--blue-btn));color:var(--white);
 }
 .mega-side-promo small{
   display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;
-  background:rgba(255,255,255,.22);padding:2px 7px;border-radius:3px;margin-bottom:6px;letter-spacing:.5px;
+  background:rgba(255,255,255,.2);padding:2px 6px;border-radius:2px;
+  margin-bottom:5px;letter-spacing:.4px;
 }
-.mega-side-promo strong{display:block;font-size:var(--font-base);margin-bottom:2px}
-.mega-side-promo span{font-size:var(--font-xs);opacity:.85;line-height:1.4}
+.mega-side-promo strong{display:block;font-size:13px;margin-bottom:2px}
+.mega-side-promo span{font-size:11px;opacity:.8;line-height:1.4}
 
-/* -- Main content (zone B) -- */
+/* -- Main content -- */
 .mega-main{flex:1;display:flex;flex-direction:column;min-width:0}
 
-/* Tabs (Type / Pathologie / Sport) */
 .mega-tabs{
-  display:flex;gap:0;border-bottom:1px solid var(--c-border);
-  padding:0 24px;background:var(--c-bg);flex-shrink:0;
+  display:flex;border-bottom:1px solid var(--border);
+  padding:0 20px;background:var(--bg-lighter);flex-shrink:0;
 }
 .mega-tab-btn{
-  padding:11px 18px;font-size:var(--font-sm);font-weight:600;
-  text-transform:uppercase;letter-spacing:.4px;color:var(--c-text-muted);
-  cursor:pointer;border:none;background:none;
-  border-bottom:2px solid transparent;transition:all var(--transition);
+  padding:10px 16px;font-size:12px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.3px;color:var(--navy-pale);
+  border:none;background:none;border-bottom:2px solid transparent;
+  transition:all var(--t);cursor:pointer;
 }
-.mega-tab-btn:hover{color:var(--c-text-light)}
-.mega-tab-btn.is-active{color:var(--c-primary);border-bottom-color:var(--c-primary)}
+.mega-tab-btn:hover{color:var(--navy-light)}
+.mega-tab-btn.is-active{color:var(--blue);border-bottom-color:var(--blue)}
 
-/* Zone views */
 .zone-view{display:none;flex-direction:column;flex:1}
 .zone-view.is-active{display:flex}
 
-/* Tab panes */
-.mega-pane{display:none;padding:20px 24px;flex:1}
+.mega-pane{display:none;padding:18px 20px;flex:1}
 .mega-pane.is-active{display:block}
 
-/* Columns grid */
-.mega-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:24px;
-}
+.mega-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:20px}
 .mega-col-title{
-  font-size:var(--font-sm);font-weight:700;text-transform:uppercase;
-  letter-spacing:.3px;color:var(--c-text);padding-bottom:6px;margin-bottom:8px;
-  border-bottom:2px solid var(--c-primary);
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;
+  color:var(--navy);padding-bottom:5px;margin-bottom:6px;
+  border-bottom:2px solid var(--blue);
 }
 .mega-col a{
-  display:block;padding:4px 0;font-size:var(--font-base);
-  color:var(--c-text-light);transition:color var(--transition);
+  display:block;padding:3px 0;font-size:13px;
+  color:var(--navy-light);transition:color var(--t);
 }
-.mega-col a:hover{color:var(--c-primary)}
+.mega-col a:hover{color:var(--blue)}
 
-/* Simple mega (non-ortho categories) */
-.mega-simple{padding:24px;flex:1}
+.mega-simple{padding:20px;flex:1}
 
-/* =============================================
-   HERO  (demo content)
-============================================= */
+/* === HERO === */
 .page-content{position:relative;z-index:1}
-
-.hero{max-width:1280px;margin:28px auto;padding:0 20px}
+.hero{max-width:1280px;margin:24px auto;padding:0 20px}
 .hero-card{
-  background:linear-gradient(135deg,#00A651 0%,#008a43 50%,#006633 100%);
-  border-radius:12px;padding:48px 40px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--blue-deep) 0%,var(--navy) 100%);
+  border-radius:var(--radius);padding:40px 36px;color:var(--white);
+  position:relative;overflow:hidden;
 }
 .hero-card::after{
-  content:'';position:absolute;top:-40%;right:-15%;width:500px;height:500px;
-  background:rgba(255,255,255,.04);border-radius:50%;pointer-events:none;
+  content:'';position:absolute;top:-30%;right:-10%;width:400px;height:400px;
+  background:rgba(5,175,242,.08);border-radius:50%;pointer-events:none;
 }
 .hero-pill{
-  display:inline-block;background:rgba(255,255,255,.18);backdrop-filter:blur(4px);
-  padding:5px 12px;border-radius:16px;font-size:var(--font-xs);font-weight:600;
-  text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;
+  display:inline-block;background:rgba(5,175,242,.2);
+  padding:4px 10px;border-radius:var(--radius);font-size:11px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px;color:var(--blue);
 }
-.hero h1{font-size:30px;font-weight:800;line-height:1.2;margin-bottom:10px;position:relative}
-.hero p{font-size:var(--font-md);opacity:.9;max-width:480px;line-height:1.6;margin-bottom:20px;position:relative}
+.hero h1{font-size:28px;font-weight:900;line-height:1.2;margin-bottom:8px;position:relative}
+.hero p{font-size:14px;opacity:.8;max-width:460px;line-height:1.6;margin-bottom:18px;position:relative}
 .hero-cta{
-  display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--c-primary);
-  padding:10px 24px;border-radius:var(--radius-lg);font-size:var(--font-md);font-weight:600;
-  transition:transform var(--transition),box-shadow var(--transition);position:relative;
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--blue);color:var(--white);
+  padding:10px 22px;border-radius:var(--radius);font-size:14px;font-weight:500;
+  transition:background var(--t);position:relative;
 }
-.hero-cta:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.hero-cta:hover{background:var(--blue-dark)}
 
 .footer-note{
-  text-align:center;padding:32px 20px;font-size:var(--font-xs);color:var(--c-text-muted);
-  border-top:1px solid var(--c-border);margin-top:48px;
+  text-align:center;padding:28px 20px;font-size:11px;color:var(--navy-pale);
+  border-top:1px solid var(--border);margin-top:40px;
 }
 
-/* =============================================
-   RESPONSIVE
-============================================= */
+/* === RESPONSIVE === */
 @media(max-width:768px){
-  .searchbox{display:none}
-  .header-util span{display:none}
+  .searchbox,.btn-contact small,.btn-pro{display:none}
   .navbar{display:none}
   .burger{display:flex}
   .header{padding:0 12px;gap:10px}
-  .hero-card{padding:28px 20px}
-  .hero h1{font-size:22px}
+  .hero-card{padding:24px 18px}
+  .hero h1{font-size:20px}
 }
 </style>
 </head>
 <body>
 
-<!-- ========== TOP BAR ========== -->
-<div class="topbar">
-  <span class="material-icons-outlined icon">local_shipping</span>
-  Livraison offerte à partir de 100€ —
-  <a href="#">Nous contacter</a>
-</div>
+<!-- TOP BAR -->
+<div class="topbar">Livraison offerte à partir de 100€</div>
 
-<!-- ========== HEADER ========== -->
+<!-- HEADER -->
 <header class="header">
-  <button class="burger" aria-label="Menu"><span class="material-icons-outlined" style="font-size:26px">menu</span></button>
-
-  <a href="#" class="logo">
-    <div class="logo-fallback">
-      <div class="logo-mark">SO</div>
-      <div class="logo-wordmark">Sport<b>Orthèse</b></div>
-    </div>
-  </a>
-
+  <button class="burger" aria-label="Menu"><span class="material-icons-outlined" style="font-size:24px">menu</span></button>
+  <a href="#" class="logo"><img src="https://www.sport-orthese.com/themes/so/assets/img/logo/logo-main.png" alt="Sport Orthèse" height="24"></a>
   <div class="searchbox">
-    <input type="text" placeholder="Rechercher un produit, une pathologie, un sport…">
-    <button class="searchbox-btn" aria-label="Rechercher"><span class="material-icons-outlined icon">search</span></button>
+    <span class="material-icons-outlined s-icon">search</span>
+    <input type="text" placeholder="Rechercher sur tout le site...">
   </div>
-
-  <div class="header-utils">
-    <a href="#" class="header-util"><span class="material-icons-outlined icon">phone_in_talk</span><span>Contact</span></a>
-    <a href="#" class="header-util"><span class="material-icons-outlined icon">storefront</span><span>Pro</span></a>
-    <a href="#" class="header-util"><span class="material-icons-outlined icon">person_outline</span><span>Compte</span></a>
-    <a href="#" class="header-util"><span class="material-icons-outlined icon">shopping_bag</span><span>Panier</span><div class="badge">2</div></a>
+  <div class="header-right">
+    <a href="#" class="btn-contact">
+      <span class="material-icons-outlined icon">phone_in_talk</span>
+      <div><span>Nous contacter</span><small>Téléphone, e-mail, WhatsApp, SMS...</small></div>
+    </a>
+    <a href="#" class="btn-pro"><span class="material-icons-outlined icon">link</span>Offre pro</a>
+    <a href="#" class="h-icon"><span class="material-icons-outlined icon">person_outline</span></a>
+    <a href="#" class="h-icon"><span class="material-icons-outlined icon">shopping_cart</span><div class="h-badge">1</div></a>
   </div>
 </header>
 
-<!-- ========== NAVBAR ========== -->
+<!-- NAVBAR -->
 <nav class="navbar" id="js-navbar">
   <div class="nav-list">
+    <div class="nav-burger"><span class="material-icons-outlined icon">menu</span> Menu</div>
     <button class="nav-link" data-target="mega-orthopedie">Orthopédie<span class="material-icons-outlined icon">expand_more</span></button>
     <button class="nav-link" data-target="mega-recuperation">Récupération<span class="material-icons-outlined icon">expand_more</span></button>
     <button class="nav-link" data-target="mega-prepa">Prépa physique<span class="material-icons-outlined icon">expand_more</span></button>
@@ -326,10 +295,10 @@ img{display:block;max-width:100%}
   </div>
 </nav>
 
-<!-- ========== MEGA PANELS (outside navbar for clean stacking) ========== -->
+<!-- MEGA PANELS -->
 <div class="mega-backdrop" id="js-backdrop"></div>
 
-<!-- ── ORTHOPÉDIE ── -->
+<!-- ORTHOPÉDIE -->
 <div class="mega-panel" id="mega-orthopedie">
   <div class="mega-body">
     <div class="mega-side">
@@ -347,10 +316,9 @@ img{display:block;max-width:100%}
       <div class="mega-side-promo">
         <small>Conseil expert</small>
         <strong>Besoin d'aide pour choisir ?</strong>
-        <span>Nos experts vous guident vers l'orthèse adaptée à votre pathologie.</span>
+        <span>Nos experts vous guident vers l'orthèse adaptée.</span>
       </div>
     </div>
-
     <div class="mega-main">
       <!-- GENOU -->
       <div class="zone-view is-active" data-zone-view="genou">
@@ -359,44 +327,33 @@ img{display:block;max-width:100%}
           <button class="mega-tab-btn">Par pathologie</button>
           <button class="mega-tab-btn">Par sport</button>
         </div>
-        <div class="mega-pane is-active">
-          <div class="mega-grid">
-            <div class="mega-col"><div class="mega-col-title">Genouillères</div>
-              <a href="#">Genouillères ligamentaires</a><a href="#">Genouillères rotuliennes</a>
-              <a href="#">Genouillère arthrose</a><a href="#">Genouillère articulée</a>
-              <a href="#">Genouillères souples</a><a href="#">Genouillères sport</a>
-            </div>
-            <div class="mega-col"><div class="mega-col-title">Immobilisation</div>
-              <a href="#">Attelles de Zimmer</a><a href="#">Protège-genoux</a>
-              <a href="#">Exosquelette</a>
-            </div>
+        <div class="mega-pane is-active"><div class="mega-grid">
+          <div class="mega-col"><div class="mega-col-title">Genouillères</div>
+            <a href="#">Genouillères ligamentaires</a><a href="#">Genouillères rotuliennes</a>
+            <a href="#">Genouillère arthrose</a><a href="#">Genouillère articulée</a>
+            <a href="#">Genouillères souples</a><a href="#">Genouillères sport</a>
           </div>
-        </div>
-        <div class="mega-pane">
-          <div class="mega-grid">
-            <div class="mega-col">
-              <a href="#">Entorse du genou</a><a href="#">Arthrose &amp; gonarthrose</a>
-              <a href="#">Tendinite du genou</a><a href="#">Fissure / déchirure ménisque</a>
-              <a href="#">Osgood-Schlatter</a>
-            </div>
+          <div class="mega-col"><div class="mega-col-title">Immobilisation</div>
+            <a href="#">Attelles de Zimmer</a><a href="#">Protège-genoux</a><a href="#">Exosquelette</a>
           </div>
-        </div>
-        <div class="mega-pane">
-          <div class="mega-grid">
-            <div class="mega-col">
-              <a href="#">Genouillère basketball</a><a href="#">Genouillère course à pied</a>
-              <a href="#">Genouillère football</a><a href="#">Genouillère handball</a>
-              <a href="#">Genouillère motocross</a><a href="#">Musculation &amp; cross training</a>
-            </div>
-            <div class="mega-col">
-              <a href="#">Genouillère rugby</a><a href="#">Genouillère ski</a>
-              <a href="#">Genouillère tennis</a><a href="#">Genouillère VTT</a>
-              <a href="#">Genouillère volley</a><a href="#">Genouillères waterproof</a>
-            </div>
+        </div></div>
+        <div class="mega-pane"><div class="mega-grid"><div class="mega-col">
+          <a href="#">Entorse du genou</a><a href="#">Arthrose &amp; gonarthrose</a>
+          <a href="#">Tendinite du genou</a><a href="#">Fissure / déchirure ménisque</a><a href="#">Osgood-Schlatter</a>
+        </div></div></div>
+        <div class="mega-pane"><div class="mega-grid">
+          <div class="mega-col">
+            <a href="#">Genouillère basketball</a><a href="#">Genouillère course à pied</a>
+            <a href="#">Genouillère football</a><a href="#">Genouillère handball</a>
+            <a href="#">Genouillère motocross</a><a href="#">Musculation &amp; cross training</a>
           </div>
-        </div>
+          <div class="mega-col">
+            <a href="#">Genouillère rugby</a><a href="#">Genouillère ski</a>
+            <a href="#">Genouillère tennis</a><a href="#">Genouillère VTT</a>
+            <a href="#">Genouillère volley</a><a href="#">Genouillères waterproof</a>
+          </div>
+        </div></div>
       </div>
-
       <!-- CHEVILLE -->
       <div class="zone-view" data-zone-view="cheville">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button><button class="mega-tab-btn">Par sport</button></div>
@@ -410,7 +367,6 @@ img{display:block;max-width:100%}
           <a href="#">Chevillère basketball</a><a href="#">Chevillère football</a><a href="#">Chevillère running</a><a href="#">Chevillère rugby</a><a href="#">Chevillère handball</a><a href="#">Chevillère tennis</a><a href="#">Chevillère ski</a><a href="#">Chevillère volley</a>
         </div></div></div>
       </div>
-
       <!-- PIEDS -->
       <div class="zone-view" data-zone-view="pieds">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button></div>
@@ -421,7 +377,6 @@ img{display:block;max-width:100%}
           <a href="#">Fasciite plantaire</a><a href="#">Hallux valgus</a><a href="#">Épine calcanéenne</a><a href="#">Métatarsalgies</a><a href="#">Fracture de fatigue</a>
         </div></div></div>
       </div>
-
       <!-- HANCHES -->
       <div class="zone-view" data-zone-view="hanches">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button></div>
@@ -432,7 +387,6 @@ img{display:block;max-width:100%}
           <a href="#">Pubalgie</a><a href="#">Tendinite des adducteurs</a><a href="#">Douleur de hanche</a>
         </div></div></div>
       </div>
-
       <!-- DOS -->
       <div class="zone-view" data-zone-view="dos">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button></div>
@@ -443,7 +397,6 @@ img{display:block;max-width:100%}
           <a href="#">Hernie discale</a><a href="#">Sciatique</a><a href="#">Lombalgie</a><a href="#">Scoliose</a><a href="#">Douleur sacro-iliaque</a>
         </div></div></div>
       </div>
-
       <!-- ÉPAULE -->
       <div class="zone-view" data-zone-view="epaule">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button></div>
@@ -454,7 +407,6 @@ img{display:block;max-width:100%}
           <a href="#">Luxation de l'épaule</a><a href="#">Tendinite de l'épaule</a><a href="#">Fracture de la clavicule</a><a href="#">Arthrose de l'épaule</a>
         </div></div></div>
       </div>
-
       <!-- COUDE -->
       <div class="zone-view" data-zone-view="coude">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button></div>
@@ -465,7 +417,6 @@ img{display:block;max-width:100%}
           <a href="#">Tennis elbow (épicondylite)</a><a href="#">Golf elbow</a><a href="#">Tendinite du coude</a><a href="#">Arthrose du coude</a>
         </div></div></div>
       </div>
-
       <!-- POIGNET -->
       <div class="zone-view" data-zone-view="poignet">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button></div>
@@ -476,7 +427,6 @@ img{display:block;max-width:100%}
           <a href="#">Canal carpien</a><a href="#">Entorse du poignet</a><a href="#">Tendinite de Quervain</a><a href="#">Rhizarthrose du pouce</a><a href="#">Polyarthrite rhumatoïde</a>
         </div></div></div>
       </div>
-
       <!-- CERVICAL -->
       <div class="zone-view" data-zone-view="cervical">
         <div class="mega-tabs"><button class="mega-tab-btn is-active">Type</button><button class="mega-tab-btn">Par pathologie</button></div>
@@ -487,23 +437,21 @@ img{display:block;max-width:100%}
           <a href="#">Cervicalgie</a><a href="#">Torticolis</a><a href="#">Hernie cervicale</a><a href="#">Whiplash (coup du lapin)</a>
         </div></div></div>
       </div>
-    </div><!-- /mega-main -->
+    </div>
   </div>
 </div>
 
-<!-- ── RÉCUPÉRATION ── -->
+<!-- RÉCUPÉRATION -->
 <div class="mega-panel" id="mega-recuperation">
   <div class="mega-body">
-    <div class="mega-side">
-      <div class="mega-side-links">
-        <button class="mega-side-link is-active"><span class="material-icons-outlined icon">electric_bolt</span>Électrostimulation</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">ac_unit</span>Cryothérapie</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">air</span>Pressothérapie</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">self_improvement</span>Massage</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">light_mode</span>Luminothérapie</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">whatshot</span>Thermothérapie</button>
-      </div>
-    </div>
+    <div class="mega-side"><div class="mega-side-links">
+      <button class="mega-side-link is-active"><span class="material-icons-outlined icon">electric_bolt</span>Électrostimulation</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">ac_unit</span>Cryothérapie</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">air</span>Pressothérapie</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">self_improvement</span>Massage</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">light_mode</span>Luminothérapie</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">whatshot</span>Thermothérapie</button>
+    </div></div>
     <div class="mega-main"><div class="mega-simple"><div class="mega-grid">
       <div class="mega-col"><div class="mega-col-title">Électrostimulation</div>
         <a href="#">Anti-douleurs (TENS)</a><a href="#">Performance (EMS)</a><a href="#">Fitness</a><a href="#">Sans fil</a><a href="#">Périnéal</a><a href="#">Professionnel</a><a href="#">Électrodes &amp; accessoires</a>
@@ -524,17 +472,15 @@ img{display:block;max-width:100%}
   </div>
 </div>
 
-<!-- ── PRÉPA PHYSIQUE ── -->
+<!-- PRÉPA PHYSIQUE -->
 <div class="mega-panel" id="mega-prepa">
   <div class="mega-body">
-    <div class="mega-side">
-      <div class="mega-side-links">
-        <button class="mega-side-link is-active"><span class="material-icons-outlined icon">fitness_center</span>Appareils</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">sports_gymnastics</span>Échauffement</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">sports_kabaddi</span>Résistance</button>
-        <button class="mega-side-link"><span class="material-icons-outlined icon">category</span>Petit matériel</button>
-      </div>
-    </div>
+    <div class="mega-side"><div class="mega-side-links">
+      <button class="mega-side-link is-active"><span class="material-icons-outlined icon">fitness_center</span>Appareils</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">sports_gymnastics</span>Échauffement</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">sports_kabaddi</span>Résistance</button>
+      <button class="mega-side-link"><span class="material-icons-outlined icon">category</span>Petit matériel</button>
+    </div></div>
     <div class="mega-main"><div class="mega-simple"><div class="mega-grid">
       <div class="mega-col"><div class="mega-col-title">Appareils d'entraînement</div>
         <a href="#">BFR (Blood Flow Restriction)</a><a href="#">Entraînement isoinertiel</a><a href="#">BlazePod</a><a href="#">Entraînement respiratoire</a><a href="#">Entraînement visuel</a>
@@ -552,7 +498,7 @@ img{display:block;max-width:100%}
   </div>
 </div>
 
-<!-- ── NUTRITION ── -->
+<!-- NUTRITION -->
 <div class="mega-panel" id="mega-nutrition">
   <div class="mega-body">
     <div class="mega-main"><div class="mega-simple"><div class="mega-grid">
@@ -569,7 +515,7 @@ img{display:block;max-width:100%}
   </div>
 </div>
 
-<!-- ── MATÉRIEL PRO ── -->
+<!-- MATÉRIEL PRO -->
 <div class="mega-panel" id="mega-pro">
   <div class="mega-body">
     <div class="mega-main"><div class="mega-simple"><div class="mega-grid">
@@ -589,13 +535,13 @@ img{display:block;max-width:100%}
   </div>
 </div>
 
-<!-- ========== PAGE CONTENT ========== -->
+<!-- PAGE CONTENT -->
 <div class="page-content">
   <section class="hero">
     <div class="hero-card">
       <div class="hero-pill">Simulation webdesign</div>
       <h1>Le nouveau mega menu<br>Sport Orthèse</h1>
-      <p>Navigation horizontale avec mega-menu structuré : sidebar zones du corps, onglets Type / Pathologie / Sport. Survolez les entrées du menu pour tester.</p>
+      <p>Navigation horizontale avec mega-menu structuré. Survolez les entrées du menu pour tester les interactions.</p>
       <a href="#" class="hero-cta">Découvrir nos produits <span class="material-icons-outlined icon" style="font-size:18px">arrow_forward</span></a>
     </div>
   </section>
@@ -604,101 +550,70 @@ img{display:block;max-width:100%}
   </div>
 </div>
 
-<!-- ========== JAVASCRIPT ========== -->
 <script>
 (function(){
-  const navbar    = document.getElementById('js-navbar');
-  const backdrop  = document.getElementById('js-backdrop');
-  const navLinks  = document.querySelectorAll('.nav-link[data-target]');
-  const panels    = document.querySelectorAll('.mega-panel');
-  let activePanel = null;
-  let closeTimer  = null;
+  const navbar=document.getElementById('js-navbar'),backdrop=document.getElementById('js-backdrop');
+  const navLinks=document.querySelectorAll('.nav-link[data-target]'),panels=document.querySelectorAll('.mega-panel');
+  let activePanel=null,closeTimer=null;
 
-  /* — position panels just below the navbar — */
   function positionPanels(){
-    const rect = navbar.getBoundingClientRect();
-    const top  = rect.bottom + 'px';
-    panels.forEach(p => p.style.top = top);
+    const t=navbar.getBoundingClientRect().bottom+'px';
+    panels.forEach(p=>p.style.top=t);
   }
-  window.addEventListener('scroll', positionPanels, {passive:true});
-  window.addEventListener('resize', positionPanels);
+  window.addEventListener('scroll',positionPanels,{passive:true});
+  window.addEventListener('resize',positionPanels);
   positionPanels();
 
-  /* — open / close helpers — */
   function openPanel(id){
     clearTimeout(closeTimer);
-    if(activePanel && activePanel.id === id) return;         // already open
-    closeAllPanels();
-    const panel = document.getElementById(id);
-    if(!panel) return;
-    panel.classList.add('is-open');
-    backdrop.classList.add('is-visible');
-    navLinks.forEach(l => l.classList.toggle('is-active', l.dataset.target === id));
-    activePanel = panel;
-    positionPanels();
+    if(activePanel&&activePanel.id===id)return;
+    closeAll();
+    const p=document.getElementById(id);if(!p)return;
+    p.classList.add('is-open');backdrop.classList.add('is-visible');
+    navLinks.forEach(l=>l.classList.toggle('is-active',l.dataset.target===id));
+    activePanel=p;positionPanels();
   }
-
-  function closeAllPanels(){
-    panels.forEach(p => p.classList.remove('is-open'));
+  function closeAll(){
+    panels.forEach(p=>p.classList.remove('is-open'));
     backdrop.classList.remove('is-visible');
-    navLinks.forEach(l => l.classList.remove('is-active'));
-    activePanel = null;
+    navLinks.forEach(l=>l.classList.remove('is-active'));
+    activePanel=null;
   }
+  function scheduleClose(){closeTimer=setTimeout(closeAll,180)}
+  function cancelClose(){clearTimeout(closeTimer)}
 
-  function scheduleClose(){
-    closeTimer = setTimeout(closeAllPanels, 180);
-  }
-  function cancelClose(){
-    clearTimeout(closeTimer);
-  }
-
-  /* — nav-link hover — */
-  navLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => openPanel(link.dataset.target));
-    link.addEventListener('mouseleave', scheduleClose);
+  navLinks.forEach(l=>{
+    l.addEventListener('mouseenter',()=>openPanel(l.dataset.target));
+    l.addEventListener('mouseleave',scheduleClose);
   });
-
-  /* — keep open while inside the panel — */
-  panels.forEach(panel => {
-    panel.addEventListener('mouseenter', cancelClose);
-    panel.addEventListener('mouseleave', scheduleClose);
+  panels.forEach(p=>{
+    p.addEventListener('mouseenter',cancelClose);
+    p.addEventListener('mouseleave',scheduleClose);
   });
+  backdrop.addEventListener('click',closeAll);
 
-  /* — close on backdrop click — */
-  backdrop.addEventListener('click', closeAllPanels);
-
-  /* — zone switching (sidebar hover) — */
-  document.querySelectorAll('.mega-side-link[data-zone]').forEach(btn => {
-    btn.addEventListener('mouseenter', function(){
-      const panel = this.closest('.mega-panel');
-      panel.querySelectorAll('.mega-side-link').forEach(l => l.classList.remove('is-active'));
+  // Zone switching
+  document.querySelectorAll('.mega-side-link[data-zone]').forEach(btn=>{
+    btn.addEventListener('mouseenter',function(){
+      const panel=this.closest('.mega-panel');
+      panel.querySelectorAll('.mega-side-link').forEach(l=>l.classList.remove('is-active'));
       this.classList.add('is-active');
-      const zone = this.dataset.zone;
-      panel.querySelectorAll('.zone-view').forEach(v => v.classList.remove('is-active'));
-      panel.querySelector('[data-zone-view="'+zone+'"]').classList.add('is-active');
+      panel.querySelectorAll('.zone-view').forEach(v=>v.classList.remove('is-active'));
+      panel.querySelector('[data-zone-view="'+this.dataset.zone+'"]').classList.add('is-active');
     });
   });
 
-  /* — tab switching (click) — */
-  document.addEventListener('click', function(e){
-    const tab = e.target.closest('.mega-tab-btn');
-    if(!tab) return;
-    const view  = tab.closest('.zone-view') || tab.closest('.mega-main');
-    const tabs  = view.querySelectorAll('.mega-tab-btn');
-    const panes = view.querySelectorAll('.mega-pane');
-    const idx   = Array.from(tabs).indexOf(tab);
-    tabs.forEach(t => t.classList.remove('is-active'));
-    panes.forEach(p => p.classList.remove('is-active'));
-    tab.classList.add('is-active');
-    if(panes[idx]) panes[idx].classList.add('is-active');
-  });
-
-  /* — zone-view defaults — */
-  document.querySelectorAll('.zone-view').forEach(v => {
-    if(!v.classList.contains('is-active')) return;
+  // Tab switching
+  document.addEventListener('click',function(e){
+    const tab=e.target.closest('.mega-tab-btn');if(!tab)return;
+    const view=tab.closest('.zone-view')||tab.closest('.mega-main');
+    const tabs=view.querySelectorAll('.mega-tab-btn'),panes=view.querySelectorAll('.mega-pane');
+    const idx=Array.from(tabs).indexOf(tab);
+    tabs.forEach(t=>t.classList.remove('is-active'));
+    panes.forEach(p=>p.classList.remove('is-active'));
+    tab.classList.add('is-active');if(panes[idx])panes[idx].classList.add('is-active');
   });
 })();
 </script>
-
 </body>
 </html>
