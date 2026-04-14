@@ -200,10 +200,7 @@
             padding: 0 24px;
             height: var(--nav-height);
             gap: 0;
-            overflow-x: auto;
-            scrollbar-width: none;
         }
-        .nav-container::-webkit-scrollbar { display: none; }
 
         .nav-item {
             position: relative;
@@ -257,14 +254,17 @@
 
         .mega-menu {
             display: none;
-            position: absolute;
-            top: 100%;
+            position: fixed;
+            top: calc(var(--topbar-height) + var(--header-height) + var(--nav-height));
             left: 0;
             right: 0;
             background: var(--white);
             box-shadow: var(--shadow-lg);
-            z-index: 85;
+            z-index: 95;
             animation: slideDown 0.25s ease;
+        }
+        .navbar-scrolled .mega-menu {
+            top: var(--nav-height);
         }
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-8px); }
@@ -1301,9 +1301,13 @@
         if (panel) panel.classList.remove('open');
     }
 
-    // Sticky navbar shadow enhancement
+    // Sticky navbar: update mega-menu position and shadow
     const navbar = document.getElementById('navbar');
+    const topbarHeight = 36;
+    const headerHeight = 64;
     window.addEventListener('scroll', () => {
+        const isStuck = window.scrollY > topbarHeight + headerHeight;
+        navbar.classList.toggle('navbar-scrolled', isStuck);
         if (window.scrollY > 10) {
             navbar.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
         } else {
